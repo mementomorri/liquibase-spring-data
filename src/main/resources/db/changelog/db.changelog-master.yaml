@@ -1,0 +1,41 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: karsten
+      changes:
+        - createTable:
+            tableName: test_entity
+            columns:
+              - column:
+                  defaultValueComputed: RANDOM_UUID()
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: document_date
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: true
+              - column:
+                  defaultValueComputed: RANDOM_UUID()
+                  name: dictionary_value_id
+                  type: UUID
+                  constraints:
+                    nullable: true
+              - column:
+                  name: dictionary_value_name
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: sort_order
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: test_name
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: true
